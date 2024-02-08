@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario basico</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Formulario de contacto</h1>
+    </header>
+
+    <form action="procesar-formulario.js" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br>
+        <br>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" id="correo" required>
+        <br>
+
+        <h3> Asunto</h3>
+        <div>
+            <input type="checkbox" name="asunto[]" id="asunto1" value="dudas">
+            <label for="asunto1">Dudas</label>
+            <input type="checkbox" name="asunto[]" id="asunto2" value="sugerencias">
+            <label for="asunto2">Sugerencias</label>
+            <input type="checkbox" name="asunto[]" id="asunto3" value="otros">
+            <label for="asunto3">Otros</label>
+        </div>
+        <br>
+
+        <div>
+            <label for="selecionArray">Selecciona una ciudad:</label>
+            <select name="Seleccion" id="selecionArray">
+                <option value="1">Bogota</option>
+                <option value="2">Villavicencio</option>
+                <option value="3">Cali</option>
+                <option value="4">Santa Marta</option>
+            </select>
+        </div>
+        <br>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" id="mensaje" required></textarea>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+
+    </form>
+
+    <footer>
+        <p>Formulario creado por <a href="https://github.com/JuanBau514">el dueño</a></p>
+
+</body>
+
+</html>
