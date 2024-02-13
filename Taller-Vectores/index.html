@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Vectores</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Taller Vectores</h1>
+        <!-- Menu de navegacion -->
+        <nav>
+            <ul>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio1.js')">Ejercicio 1</a></li>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio2.js')">Ejercicio 2</a></li>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio3.js')">Ejercicio 3</a></li>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio4.js')">Ejercicio 4</a></li>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio5.js')">Ejercicio 5</a></li>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio6.js')">Ejercicio 6</a></li>
+                <li><a href="#" onclick="cargarEjercicio('ejercicio7.js')">Ejercicio 7</a></li>
+
+                <li><a href="ejercicio8.php">Ejercicio 8</a></li>
+                <li><a href="ejercicio9.php">Ejercicio 9</a></li>
+                <li><a href="ejercicio10.php">Ejercicio 10</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main id="contenido">
+
+    </main>
+
+    <script>
+        function cargarEjercicio(archivo) {
+            fetch(archivo)
+                .then(response => response.text())
+                .then(data => {
+                    const script = document.createElement('script');
+                    script.textContent = data;
+                    document.getElementById('contenido').innerHTML = '';
+                    document.getElementById('contenido').appendChild(script);
+                })
+                .catch(error => console.error('Error al cargar el archivo', error));
+        }
+    </script>
+
+</body>
+
+</html>
